@@ -1,0 +1,38 @@
+<zk>
+<div align="center">
+	<window border="normal" width="40%" height="720px">
+		<vlayout>
+			<separator height="15px" />
+			<div align="center">
+				<label class="content-title">
+					<attribute name="value">"Thinking in Java"</attribute>
+				</label>
+				<separator height="15px" />
+				<label class="content-desc">
+					<attribute name="value">
+						Thinking in Java is a printed version of Bruce
+						Eckel's online materials that provides a useful
+						perspective on mastering Java for those with
+						previous programming experience. The author's
+						take on the essence of Java as a new programming
+						language and the thorough introduction to Java's
+						features make this a worthwhile tutorial.
+					</attribute>
+				</label>
+				<separator height="15px" />
+				<image src="book.jpg" width="50%" height="60%" />
+				<separator height="15px" />
+				<label class="content-desc">
+					<attribute name="value">Price = $49.99</attribute>
+				</label>
+				<separator height="15px" />
+				<div align="center">
+					<button class="content-title" label="Buy it now !"
+						href="/sendingPayment.zul" />
+				</div>
+			</div>
+		</vlayout>
+		<include src="style.zul" />
+	</window>
+</div>
+</zk>

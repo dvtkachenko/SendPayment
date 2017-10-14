@@ -1,0 +1,103 @@
+<zk>
+<div align="center">
+	<window
+		apply="dimatkachenko.com.SendPayment.SendingPaymentController"
+		id="mainWindow"
+		title="Test sending payment. Unicharge Processing API." width="40%"
+		height="720px" border="normal">
+		<div align="center">
+			<hbox width="65%">
+				<grid>
+					<columns visible="false">
+						<column />
+						<column align="left" hflex="min" />
+					</columns>
+					<rows>
+						<row>
+							<label value="Card/Account Information:"
+								width="150px" style="font-size:14px" class="content-title" />
+						</row>
+						<row>
+							<label value="Card Number" width="100px" />
+							<textbox id="accountNumber"	constraint="no empty, no zero, /[0-9]{16}/" width="150px" />
+						</row>
+						<row>
+							<label value="Exp Date" width="100px" />
+							<hlayout>
+								<listbox id="monthList" mold="select" width="50px">
+									<template name="model">
+										<listitem label="${each}" />
+									</template>
+								</listbox>
+
+								<label value="MM" width="20px" />
+								<listbox id="yearList" mold="select" width="50px">
+									<template name="model">
+										<listitem label="${each}" />
+									</template>
+								</listbox>
+								<label value="YY" width="20px" />
+							</hlayout>
+						</row>
+						<row>
+							<label value="CSC Code" width="100px" />
+							<textbox id="csc" type="password" constraint="no empty,no zero, /[0-9]{3,4}/" width="50px" />
+						</row>
+						<row>
+							<label value="Transaction Information:"
+								width="150px" style="font-size:14px" class="content-title" />
+						</row>
+						<row>
+							<label value="Amount" width="100px" />
+							<decimalbox id="amount" format="###.##"
+								constraint="no empty,no zero" width="150px" />
+						</row>
+						<row>
+							<label value="Holder Name" width="100px" />
+							<textbox id="holderName" width="150px" />
+						</row>
+						<row>
+							<label value="Street" width="100px" />
+							<textbox id="street" width="150px" />
+						</row>
+						<row>
+							<label value="City" width="100px" />
+							<textbox id="city" width="150px" />
+						</row>
+						<row>
+							<label value="State" width="100px" />
+							<textbox id="state" width="150px" />
+						</row>
+						<row>
+							<label value="Zip Code" width="100px" />
+							<textbox id="zipCode" width="150px" />
+						</row>
+					</rows>
+				</grid>
+			</hbox>
+		</div>
+		<separator height="15px" />
+		<div align="center">
+			<button id="sendPayment" label="Pay" width="150px" />
+		</div>
+		<separator height="15px" />
+		<div align="center">
+			<window id="responseModalWindow" 
+				border="normal" width="250px" visible="false">
+				<separator height="15px" />
+				<div align="center">
+				<label value="Payment has been approved !"
+					class="content-desc" width="150px" />
+				</div>
+				<separator height="15px" />
+				<div align="center">
+					<button id="returnButton" label="Return"
+						class="content-desc"
+						onClick="responseModalWindow.setVisible(false); Executions.sendRedirect(&quot;/index.zul&quot;)" />
+				</div>
+			</window>
+		</div>
+		<include src="style.zul" />
+	</window>
+</div>
+</zk>

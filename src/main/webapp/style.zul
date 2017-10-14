@@ -1,0 +1,39 @@
+<style><![CDATA[
+.header {
+    background-color: #165379;
+    border-bottom: 1px solid #454545;
+    color: white;
+    padding-left: 75px;
+}
+
+.content-title {
+    color: #015182;
+    font-family: 'Trebuchet MS',Trebuchet;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 30px;
+    text-decoration: none;
+}
+.content-title:hover {
+    text-decoration: underline
+}
+.content-desc {
+    color: gray;
+    font-family: 'Trebuchet MS',Trebuchet;
+    font-size: 14px;
+    white-space: normal;
+}
+.content-more {
+    color: gray;
+    font-family: 'Trebuchet MS',Trebuchet;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: bold;
+}
+.footer {
+    background-color: #165379;
+    border-top : 1px solid gray;
+    color: #EFEFEF;
+    text-align: center;
+}
+]]></style>
