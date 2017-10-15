@@ -33,6 +33,7 @@ public class ProcessingControllerImpl implements ProcessingController {
 		InputStream stream = null;
 		URL urlGatewayLink = new URL(gatewayLink);
 		OutputStreamWriter writer = null;
+		String streamAsString;
 
 		conn = (HttpURLConnection) urlGatewayLink.openConnection();
 		conn.setDoInput(true);
@@ -58,7 +59,11 @@ public class ProcessingControllerImpl implements ProcessingController {
 			return EMPTY;
 		}
 
-		return stream2String(stream);
+		streamAsString = stream2String(stream);
+		
+		conn.disconnect();
+		
+		return streamAsString;
 	}
 
 	private String stream2String(InputStream is) throws IOException {
